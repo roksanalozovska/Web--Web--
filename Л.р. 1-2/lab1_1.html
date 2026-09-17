@@ -165,33 +165,205 @@
 
             <tr align="center">
                 <td colspan="3"><b>Навчальна картка</b></td>
-                <td width="25%"><b>Дисципліна</b></td>
-                <td width="25%"><b>Бали </b></td>
+                <td colspan="2"><b>Семестровий контроль</b></td>
+                <td colspan="2"><b>І семестр</b></td>
+                <td colspan="2"><b>Екзамени</b></td>
             </tr>
 
             <tr align="center">
-                <td rowspan="4" width="15%"><b>ЗК-40281</b></td>
+                <td rowspan="4" width="15%"><b>ЗК-24520144</b></td>
                 <td rowspan="4" width="15%"><b>Петренко Б.С.</b></td>
                 <td rowspan="4" width="15%"><b>КН-42/1</b></td>
-                <td>Вища математика</td>
-                <td>91</td>
+                <td colspan="3">Вища математика</td>
+                <td colspan="3">91</td>
             </tr>
 
             <tr align="center">
-                <td>Англійська мова</td>
-                <td>88</td>
+                <td colspan="3">Англійська мова</td>
+                <td colspan="3">88</td>
             </tr>
 
             <tr align="center">
-                <td>Вступ до спеціальності</td>
-                <td>95</td>
+                <td colspan="3">Вступ до спеціальності</td>
+                <td colspan="3">95</td>
             </tr>
 
             <tr align="center">
-                <td>Організація ІТ-бізнесу</td>
-                <td>93</td>
+                <td colspan="3">Організація ІТ-бізнесу</td>
+                <td colspan="3">93</td>
             </tr>
         </table>
     </font>
+
+    <!-- ЗАВДАННЯ 7 -->
+    <p> Форма замовлення </p>
+
+    <form action="processorder.php" method=post>
+
+        <b> П. І. Пб. замовника: </b>
+
+        <input type="text" name="fam" size=40>
+
+        <br>
+
+        <table border=0>
+
+            <tr>
+
+            <tr bgcolor=#cccccc>
+                <td align=center> Виріб</td>
+                <td align=center width=150> Найменування</td>
+                <td align=center width=20> Кількість </td>
+            </tr>
+
+            <tr>
+                <td align=center> Шини </td>
+                <td align=center><input type="text" name="tireqty" size=3 maxlength=3></td>
+                <td align=center><input type="text" name="tireqty" size=3 maxlength=3></td>
+            </tr>
+
+            <tr>
+                <td align=center> Машинне мастило</td>
+                <td align=center><input type="text" name="oilty" size=3 maxlength=3></td>
+                <td align=center><input type="text" name="oilty" size=3 maxlength=3></td>
+            </tr>
+
+            <tr>
+                <td align=center> Свічки запалювання</td>
+                <td align=center><input type="text" name="Sparkqty" size=3 maxlength=3></td>
+                <td align=center><input type="text" name="Sparkqty" size=3 maxlength=3></td>
+            </tr>
+
+            <tr>
+                <td colspan=2>
+                    <input type=submit name=submit value="Ввести замовлення">
+                    <!-- ЗАВДАННЯ 8 -->
+                    <input type="reset" name="reset" value="Очистити">
+                </td>
+            </tr>
+
+        </table>
+
+    </form>
+
+    <!-- ЗАВДАННЯ 9 -->
+    <p> Вітаємо Вас на нашому сайті </p>
+
+    <FORM>
+        <P>
+            Введіть логін:
+            <INPUT NAME="login">
+
+        <P>
+            Введіть пароль:
+            <INPUT TYPE="password" NAME="parol">
+
+            <!-- ЗАВДАННЯ 10 -->
+        <P>
+            <INPUT TYPE="submit" VALUE="Вхід">
+            <INPUT TYPE="reset" VALUE="Очистити">
+    </FORM>
+
+    <!-- ЗАВДАННЯ 11 -->
+    <H3 ALIGN=CENTER> Анкета користувача </H3>
+    <P>Дайте відповіді на наступні запитання:</P>
+    <FORM METHOD="POST">
+
+        <P> Ваше ім'я: <INPUT NAME="name" SIZE="48">
+        <P> Стать чоловіча <INPUT NAME="gender" TYPE=RADIO VALUE="male">
+        <P> Стать жіноча <INPUT NAME="gender" TYPE=RADIO VALUE="female">
+        <P>
+            Діти <INPUT NAME="family" TYPE=TEXT>
+            <UL>
+                <LI> Є <INPUT NAME="children" TYPE="checkbox" VALUE="yes">
+                <LI> Немає <INPUT NAME="children" TYPE="checkbox" VALUE="no">
+            </UL>
+
+            <!-- ЗАВДАННЯ 13-->
+        <P>
+            Місто проживання:
+            <SELECT NAME="Місто проживання">
+                <OPTION> Суми
+                <OPTION> Київ
+                <OPTION value="Other">Інше
+                <OPTION selected> Суми
+            </SELECT>
+
+            <!-- ЗАВДАННЯ 12 -->
+        <P>
+            <TEXTAREA NAME="text" COLS=30 ROWS=3></TEXTAREA>
+
+        <P>
+            <button name="questionnaire" value="123" type="submit">Відправити</button>
+            <button name="questionnaire" value="123" type="reset">Очистити форму</button>
+
+    </FORM>
+
+    <!-- ЗАВДАННЯ 14 -->
+    <h3 align="center">Форма виклику майстра з ремонту побутових приладів</h3>
+
+    <form action="repair_order.php" method="post">
+
+        <p>
+            <b>Прізвище та ім'я замовника:</b><br>
+            <input type="text" name="client_name" size="45">
+        </p>
+
+        <p>
+            <b>Контактний номер телефону:</b><br>
+            <input type="text" name="client_phone" size="20" maxlength="13" value="+380">
+        </p>
+
+        <p>
+            <b>Тип побутового приладу:</b><br>
+            <select name="appliance_type">
+                <option selected>Пральна машина</option>
+                <option>Холодильник</option>
+                <option>Посудомийна машина</option>
+                <option>Мікрохвильова піч</option>
+                <option>Духова шафа / Плита</option>
+                <option value="other">Інша техніка</option>
+            </select>
+        </p>
+
+        <p>
+            <b>Терміновість ремонту:</b><br>
+            <input type="radio" name="urgency" value="standard" checked> Звичайний (протягом 1-2 днів)<br>
+            <input type="radio" name="urgency" value="urgent"> Терміновий виклик (сьогодні)
+        </p>
+
+        <p>
+            <b>Додаткові послуги:</b><br>
+            <input type="checkbox" name="service_diag" value="yes" checked> Попередня діагностика<br>
+            <input type="checkbox" name="service_parts" value="yes"> Замовлення оригінальних запчастин майстром<br>
+            <input type="checkbox" name="service_warranty" value="yes"> Оформлення розширеної гарантії
+        </p>
+
+        <p>
+            <b>Опис несправності:</b><br>
+            <textarea name="problem_description" cols="45" rows="4"></textarea>
+        </p>
+
+        <p>
+            <input type="submit" value="Викликати майстра">
+            <input type="reset" value="Очистити поля">
+        </p>
+
+    </form>
+
+    <!-- ЗАВДАННЯ 15 -->
+    <center>
+        <p>
+            <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Пошук">
+        </p>
+        <p>
+            <a href="https://google.com/" title="Google Search">Знайти в Google</a>
+        </p>
+    </center>
+
+    <!-- ЗАВДАННЯ 16 -->
+    <p align="center">
+        <a href="lab1_2.html">Перейти на сторінку з анкетними даними студента</a>
+    </p>
 </body>
 </html>

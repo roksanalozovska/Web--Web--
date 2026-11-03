@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<head>
+    <title>Завдання 3</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 70%;
+            margin: 20px 0;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #ffc0cb;
+        }
+
+        .total-row {
+            font-weight: bold;
+            background-color: #87cefa;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // Масив з об'єктами товарів
+        let products = [
+            { code: "B101", name: "Електрочайник", price: 850, count: 3 },
+            { code: "B102", name: "Кавомашина", price: 12500, count: 1 },
+            { code: "B103", name: "Мікрохвильовка", price: 3400, count: 2 },
+            { code: "B104", name: "Блендер", price: 1100, count: 4 },
+            { code: "B105", name: "Тостер", price: 950, count: 2 }
+        ];
+
+        let totalSum = 0;
+
+        // Побудова таблиці за допомогою document.write()
+        document.write("<table>");
+        document.write("<tr><th>Код</th><th>Найменування</th><th>Ціна за од.</th><th>Кількість</th><th>Сума</th></tr>");
+
+        for (let i = 0; i < products.length; i++) {
+            let itemSum = products[i].price * products[i].count;
+            totalSum += itemSum;
+
+            document.write("<tr>");
+            document.write("<td>" + products[i].code + "</td>");
+            document.write("<td>" + products[i].name + "</td>");
+            document.write("<td>" + products[i].price + " грн</td>");
+            document.write("<td>" + products[i].count + "</td>");
+            document.write("<td>" + itemSum + " грн</td>");
+            document.write("</tr>");
+        }
+
+        // Рядок «Всього»
+        document.write("<tr class='total-row'>");
+        document.write("<td colspan='4' align='right'>Всього:</td>");
+        document.write("<td>" + totalSum + " грн</td>");
+        document.write("</tr>");
+
+        document.write("</table>");
+    </script>
+</body>

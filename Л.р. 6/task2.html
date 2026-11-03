@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<head>
+    <title>Завдання 2</title>
+    <style>
+        .box {
+            padding: 10px;
+            margin: 5px 0;
+            text-align: center;
+            font-weight: bold;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        for (let i = 1; i <= 5; i++) {
+            // Генерація випадкових чисел від 0 до 255
+            let r = Math.floor(Math.random() * 256);
+            let g = Math.floor(Math.random() * 256);
+            let b = Math.floor(Math.random() * 256);
+
+            // Формування стилю з rgb() та виведення через document.write()
+            document.write('<p class="box" style="background-color: rgb(' + r + ', ' + g + ', ' + b + ');">Абзац ' + i + '</p>');
+        }
+    </script>
+</body>

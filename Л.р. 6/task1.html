@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<head>
+    <title>Завдання 1</title>
+</head>
+<body>
+    <script>
+        let answer = prompt("Введіть двозначне число:");
+
+        if (answer !== null) {
+            let num = +answer;
+
+            // Перевірка чи це число, чи воно ціле і чи воно двозначне
+            if (isNaN(num) || answer.trim() === "") {
+                alert("Помилка! Ви ввели не число.");
+            } else if (!Number.isInteger(num)) {
+                alert("Помилка! Число має бути цілим, а не дробовим.");
+            } else if (num < 10 || num > 99) {
+                alert("Помилка! Число має бути двозначним (від 10 до 99).");
+            } else {
+                let result = "";
+
+                for (let i = 2; i <= 10; i++) {
+                    if (num % i === 0) {
+                        result += i + " ";
+                    }
+                }
+
+                if (result !== "") {
+                    alert("Число " + num + " ділиться без залишку на: " + result);
+                } else {
+                    alert("Число " + num + " не ділиться без залишку на жодне число від 2 до 10.");
+                }
+            }
+        }
+    </script>
+</body>

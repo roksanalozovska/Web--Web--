@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="utf-8" />
+    <title>Завдання 3</title>
+</head>
+<body>
+    <script>
+        let numberOfRecusrionCalls = 0;
+        let numberOfMemoCalls = 0;
+
+        function fibonachiRecursion(numberInRow) {
+            numberOfRecusrionCalls++;
+
+            if (numberInRow <= 1) {
+                return 1;
+            }
+
+            return fibonachiRecursion(numberInRow - 1) + fibonachiRecursion(numberInRow - 2);
+        }
+        // Функція з мемоізацією через замикання
+        function createFibonachiMemo() {
+            // Кеш для збереження обчислених значень
+            const cache = {};
+
+            return function fibonachiMemo(numberInRow) {
+                numberOfMemoCalls++;
+                // Якщо значення вже є в кеші, повертаємо його
+                if (numberInRow in cache) {
+                    return cache[numberInRow];
+                }
+
+                if (numberInRow <= 1) {
+                    return 1;
+                }
+                // Збереження результату в кеші
+                cache[numberInRow] = fibonachiMemo(numberInRow - 1) + fibonachiMemo(numberInRow - 2);
+                return cache[numberInRow];
+            };
+        }
+
+        const fibonachiMemo = createFibonachiMemo();
+
+        console.log(fibonachiRecursion(5), numberOfRecusrionCalls);
+        console.log(fibonachiMemo(5), numberOfMemoCalls);
+    </script>
+</body>
+</html>

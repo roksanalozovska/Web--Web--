@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="utf-8" />
+    <title>Завдання 2</title>
+</head>
+<body>
+    <script>
+        function factorialRecursion(n) {
+            if (n < 0) return undefined;
+            if (n === 0 || n === 1) {
+                return 1;
+            }
+            // Рекурсивний виклик функції
+            return n * factorialRecursion(n - 1);
+        }
+
+        console.log("5! =", factorialRecursion(5));
+        console.log("0! =", factorialRecursion(0));
+    </script>
+</body>
+</html>

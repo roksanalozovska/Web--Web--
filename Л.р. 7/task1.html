@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="utf-8" />
+    <title>Завдання 1</title>
+</head>
+<body>
+    <script>
+        function sumOrMinus() {
+            const args = Array.from(arguments);
+            const count = args.length;
+            
+            if (count === 0) return 0;
+            // Якщо парна кількість - сумуємо
+            if (count % 2 === 0) {
+                return args.reduce((acc, curr) => acc + curr, 0);
+            } else {
+                // Якщо непарна кількість - віднімаємо
+                let result = args[count - 1];
+                for (let i = count - 2; i >= 0; i--) {
+                    result -= args[i];
+                }
+                return result;
+            }
+        }
+        
+        console.log(sumOrMinus(1, 2, 3));       
+        console.log(sumOrMinus(2, 5, 8, 4)); 
+        console.log(sumOrMinus(8, 1, 2));    
+    </script>
+</body>
+</html>

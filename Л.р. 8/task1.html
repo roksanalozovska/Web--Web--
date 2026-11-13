@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<head>
+    <title>Завдання 1</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+
+        table {
+            width: 750px;
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+
+        td.tab-btn {
+            width: 20%;
+            border: 1px solid black;
+            padding: 12px;
+            text-align: center;
+            font-weight: bold;
+            cursor: pointer;
+            background-color: #e9ecef;
+        }
+
+            td.tab-btn:hover {
+                background-color: #d0ebff;
+            }
+
+        td.tab-content {
+            border: 1px solid black;
+            padding: 20px;
+        }
+
+        .inner-table {
+            width: 100%;
+        }
+
+            .inner-table td {
+                vertical-align: top;
+            }
+
+        .tab-img {
+            width: 250px;
+            height: 170px;
+        }
+    </style>
+    <script type="text/javascript">
+        function resetTabs() {
+            document.getElementById('tab1').style.backgroundColor = '#e9ecef';
+            document.getElementById('tab2').style.backgroundColor = '#e9ecef';
+            document.getElementById('tab3').style.backgroundColor = '#e9ecef';
+            document.getElementById('tab4').style.backgroundColor = '#e9ecef';
+            document.getElementById('tab5').style.backgroundColor = '#e9ecef';
+        }
+        
+        function info_for_tab(tabNumber) {
+            resetTabs();
+            let content = document.getElementById('tab_content');
+
+            if (tabNumber == 1) {
+                document.getElementById('tab1').style.backgroundColor = '#acfeff';
+                content.innerHTML =
+                    "<table class='inner-table'><tr>" +
+                        "<td width='270'><img src='img/tab1.jpg' class='tab-img' alt='Зима'></td>" +
+                        "<td>" +
+                            "<h3>Зима</h3>" +
+                            "<p><b>Зима</b> — найхолодніша пора року, коли природа вкривається снігом.</p>" +
+                            "<ul><li>Місяці: грудень, січень, лютий</li><li>Характерні морози та снігопади</li></ul>" +
+                        "</td>" +
+                    "</tr></table>";
+            }
+            else if (tabNumber == 2) {
+                document.getElementById('tab2').style.backgroundColor = '#acfeff';
+                content.innerHTML =
+                    "<table class='inner-table'><tr>" +
+                        "<td width='270'><img src='img/tab2.jpg' class='tab-img' alt='Весна'></td>" +
+                        "<td>" +
+                            "<h3>Весна</h3>" +
+                            "<p><b>Весна</b> — час пробудження природи, перших квітів та теплого сонця.</p>" +
+                            "<ul><li>Місяці: березень, квітень, травень</li><li>Збільшується тривалість дня</li></ul>" +
+                        "</td>" +
+                    "</tr></table>";
+            }
+            else if (tabNumber == 3) {
+                document.getElementById('tab3').style.backgroundColor = '#acfeff';
+                content.innerHTML =
+                    "<table class='inner-table'><tr>" +
+                        "<td width='270'><img src='img/tab3.jpg' class='tab-img' alt='Літо'></td>" +
+                        "<td>" +
+                            "<h3>Літо</h3>" +
+                            "<p><b>Літо</b> — найтепліша пора року, період канікул, відпусток та яскравого сонця.</p>" +
+                            "<ul><li>Місяці: червень, липень, серпень</li><li>Найдовші дні в році</li></ul>" +
+                        "</td>" +
+                    "</tr></table>";
+            }
+            else if (tabNumber == 4) {
+                document.getElementById('tab4').style.backgroundColor = '#acfeff';
+                content.innerHTML =
+                    "<table class='inner-table'><tr>" +
+                        "<td width='270'><img src='img/tab4.jpg' class='tab-img' alt='Осінь'></td>" +
+                        "<td>" +
+                            "<h3>Осінь</h3>" +
+                            "<p><b>Осінь</b> — пора золотого листя, збору врожаю та затишних дощових вечорів.</p>" +
+                            "<ul><li>Місяці: вересень, жовтень, листопад</li><li>Поступове зниження температури</li></ul>" +
+                        "</td>" +
+                    "</tr></table>";
+            }
+            else if (tabNumber == 5) {
+                document.getElementById('tab5').style.backgroundColor = '#acfeff';
+                content.innerHTML =
+                    "<table class='inner-table'><tr>" +
+                        "<td width='270'><img src='img/tab5.jpg' class='tab-img' alt='Клімат'></td>" +
+                        "<td>" +
+                            "<h3>Клімат</h3>" +
+                            "<p><b>Помірний клімат</b> має чітко виражені всі чотири пори року.</p>" +
+                            "<ul><li>Середня температура влітку: +22°C</li><li>Середня температура взимку: -5°C</li></ul>" +
+                        "</td>" +
+                    "</tr></table>";
+            }
+        }
+    </script>
+</head>
+<body onload="info_for_tab(1)">
+
+    <table>
+        <tr>
+            <td id="tab1" class="tab-btn" onclick="info_for_tab(1)">Зима</td>
+            <td id="tab2" class="tab-btn" onclick="info_for_tab(2)">Весна</td>
+            <td id="tab3" class="tab-btn" onclick="info_for_tab(3)">Літо</td>
+            <td id="tab4" class="tab-btn" onclick="info_for_tab(4)">Осінь</td>
+            <td id="tab5" class="tab-btn" onclick="info_for_tab(5)">Клімат</td>
+        </tr>
+        <tr>
+            <td id="tab_content" class="tab-content" colspan="5"></td>
+        </tr>
+    </table>
+</body>

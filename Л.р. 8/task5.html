@@ -1,0 +1,185 @@
+﻿<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Завдання 5</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f5f9;
+            margin: 40px;
+        }
+
+        table.forms-table {
+            width: 760px;
+            margin: 0 auto;
+        }
+
+        td.form-card {
+            width: 50%;
+            background-color: #ffffff;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            padding: 25px;
+            vertical-align: top;
+        }
+
+        h2 {
+            margin-top: 0;
+            text-align: center;
+            color: #1b263b;
+            border-bottom: 2px solid #f59e0b;
+            padding-bottom: 10px;
+        }
+
+        .row {
+            margin-bottom: 14px;
+            font-size: 14px;
+            color: #1b263b;
+            font-weight: bold;
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #94a3b8;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #1b263b;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+            .btn:hover {
+                background-color: #f59e0b;
+                color: #1b263b;
+            }
+    </style>
+
+    <script type="text/javascript">
+        // Валідація форми авторизації 
+        function validateForm() {
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+            let emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+            if (email == "") {
+                alert("Поле Email має бути заповнене");
+                return false;
+            }
+            if (!email.match(emailRegex)) {
+                alert("Будь ласка, введіть коректну адресу електронної пошти");
+                return false;
+            }
+            if (password == "") {
+                alert("Поле Пароль має бути заповнене");
+                return false;
+            }
+
+            alert("Вхід до магазину «Електрообладнання» виконано успішно!");
+            return true;
+        }
+
+        // Валідація форми реєстрації покупця
+        function validateRegister() {
+            let name = document.getElementById("reg_name").value;
+            let email = document.getElementById("reg_email").value;
+            let phone = document.getElementById("reg_phone").value;
+            let password1 = document.getElementById("reg_password1").value;
+            let password2 = document.getElementById("reg_password2").value;
+            let emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+            if (name == "") {
+                alert("Поле Ім'я та прізвище має бути заповнене");
+                return false;
+            }
+            if (email == "") {
+                alert("Поле Email має бути заповнене");
+                return false;
+            }
+            if (!email.match(emailRegex)) {
+                alert("Будь ласка, введіть коректну адресу електронної пошти");
+                return false;
+            }
+            if (phone == "") {
+                alert("Поле Номер телефону має бути заповнене");
+                return false;
+            }
+            if (password1 == "") {
+                alert("Поле Пароль має бути заповнене");
+                return false;
+            }
+            if (password1 != password2) {
+                alert("Паролі не співпадають!");
+                return false;
+            }
+
+            alert("Реєстрація покупця в магазині «Електрообладнання» успішна!");
+            return true;
+        }
+    </script>
+</head>
+<body>
+
+    <table class="forms-table" cellspacing="20">
+        <tr>
+            <td class="form-card">
+                <h2>Вхід в «Електрообладнання»</h2>
+                <form onsubmit="return validateForm()">
+                    <div class="row">
+                        Email:
+                        <input type="text" id="email" placeholder="example@gmail.com">
+                    </div>
+                    <div class="row">
+                        Пароль:
+                        <input type="password" id="password" placeholder="Введіть пароль">
+                    </div>
+                    <div class="row">
+                        <input type="submit" value="Увійти" class="btn">
+                    </div>
+                </form>
+            </td>
+
+            <td class="form-card">
+                <h2>Реєстрація покупця</h2>
+                <form onsubmit="return validateRegister()">
+                    <div class="row">
+                        Прізвище та ім'я:
+                        <input type="text" id="reg_name" placeholder="Лозовська Роксана">
+                    </div>
+                    <div class="row">
+                        Email:
+                        <input type="text" id="reg_email" placeholder="example@gmail.com">
+                    </div>
+                    <div class="row">
+                        Номер телефону:
+                        <input type="text" id="reg_phone" placeholder="+380501234567">
+                    </div>
+                    <div class="row">
+                        Пароль:
+                        <input type="password" id="reg_password1" placeholder="Придумайте пароль">
+                    </div>
+                    <div class="row">
+                        Підтвердіть пароль:
+                        <input type="password" id="reg_password2" placeholder="Повторіть пароль">
+                    </div>
+                    <div class="row">
+                        <input type="submit" value="Зареєструватися" class="btn">
+                    </div>
+                </form>
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>

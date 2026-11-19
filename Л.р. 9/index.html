@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<head>
+    <title>Кошик магазину «Електрообладнання»</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial;
+            background-color: #f1f5f9;
+            color: #1b263b;
+        }
+
+        header {
+            background-color: #1b263b;
+            color: #ffffff;
+            padding: 18px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 4px solid #f59e0b;
+        }
+
+            header h1 {
+                font-size: 24px;
+            }
+
+        .header-cart-info {
+            background-color: #f59e0b;
+            color: #1b263b;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+        .wrapper {
+            display: flex;
+            gap: 25px;
+            max-width: 1300px;
+            margin: 30px auto;
+            padding: 0 20px;
+            align-items: flex-start;
+        }
+        /* Ліва колонка — каталог товарів */
+        .catalog-section {
+            flex: 2;
+        }
+
+            .catalog-section h2, .basket-section h2 {
+                margin-bottom: 18px;
+                padding-bottom: 8px;
+                border-bottom: 2px solid #cbd5e1;
+            }
+
+        .catalog-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .product-card {
+            background-color: #ffffff;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            padding: 15px;
+            text-align: center;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #e2e8f0;
+            color: #1b263b;
+            font-size: 11px;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: contain;
+            margin: 15px 0 10px;
+        }
+
+        .product-card h3 {
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .amount {
+            font-size: 13px;
+            color: #475569;
+            margin-bottom: 12px;
+        }
+
+        .product-card button {
+            background-color: #1b263b;
+            color: #ffffff;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+            .product-card button:hover:not(:disabled) {
+                background-color: #f59e0b;
+                color: #1b263b;
+            }
+
+            .product-card button:disabled {
+                background-color: #94a3b8;
+                cursor: not-allowed;
+            }
+
+        /* Права колонка — кошик */
+        .basket-section {
+            flex: 1;
+            background-color: #ffffff;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            padding: 20px;
+            position: sticky;
+            top: 20px;
+        }
+
+        .empty-msg {
+            color: #64748b;
+            font-size: 14px;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .basket-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 14px;
+        }
+
+            .basket-item:last-child {
+                border-bottom: none;
+            }
+
+            .basket-item small {
+                color: #64748b;
+            }
+
+        .basket-time {
+            background-color: #fef3c7;
+            color: #92400e;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Інтернет-магазин «Електрообладнання»</h1>
+        <div class="header-cart-info">Товарів у кошику: <span id="basket-count">0</span></div>
+    </header>
+
+    <div class="wrapper">
+        <!-- Каталог товарів з JSON -->
+        <div class="catalog-section">
+            <h2>Каталог товарів</h2>
+            <div id="catalog-container" class="catalog-grid"></div>
+        </div>
+
+        <!-- Кошик користувача -->
+        <div class="basket-section">
+            <h2>Ваш кошик</h2>
+            <div id="basket-list">
+                <p class="empty-msg">Кошик порожній. Додайте товари з каталогу.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="store.js"></script>
+</body>

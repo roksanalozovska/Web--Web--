@@ -1,0 +1,56 @@
+[
+  {
+    "name": "Автоматичний вимикач",
+    "category": "automation",
+    "amount": 5,
+    "image": "breaker.jpg"
+  },
+  {
+    "name": "Пристрій захисного відключення",
+    "category": "automation",
+    "amount": 3,
+    "image": "rcd.jpg"
+  },
+  {
+    "name": "Реле напруги",
+    "category": "automation",
+    "amount": 4,
+    "image": "relay.jpg"
+  },
+  {
+    "name": "Розетка із заземленням",
+    "category": "wiring",
+    "amount": 6,
+    "image": "socket.jpg"
+  },
+  {
+    "name": "Вимикач двоклавішний",
+    "category": "wiring",
+    "amount": 5,
+    "image": "switch.jpg"
+  },
+  {
+    "name": "Провід ПМЛ",
+    "category": "wiring",
+    "amount": 10,
+    "image": "cable.jpg"
+  },
+  {
+    "name": "Лампа світлодіодна LED",
+    "category": "power",
+    "amount": 8,
+    "image": "led-lamp.jpg"
+  },
+  {
+    "name": "Генератор бензиновий",
+    "category": "power",
+    "amount": 2,
+    "image": "generator.jpg"
+  },
+  {
+    "name": "Стабілізатор напруги",
+    "category": "power",
+    "amount": 3,
+    "image": "stabilizer.jpg"
+  }
+]

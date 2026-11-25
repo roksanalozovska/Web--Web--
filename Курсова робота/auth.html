@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Особистий кабінет — ElectroMarket</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="main">
+
+    <div class="header compact-header">
+        <img src="img/header-banner.jpg" alt="Електрообладнання" class="header-img">
+        <h1>Особистий кабінет</h1>
+    </div>
+
+    <nav id="nav">
+        <ul class="nav-links">
+            <li><a href="index.html">Головна</a></li>
+            <li><a href="catalog.html">Каталог товарів</a></li>
+        <li><a href="about.html">Про нас</a></li>
+            <li><a href="admin.html">Адмін-панель</a></li>
+        </ul>
+        <div class="nav-auth"><a href="auth.html">Вхід / Реєстрація</a></div>
+    </nav>
+
+    <div class="content">
+        <div class="auth-single-card">
+
+            <!-- Форма входу покупця -->
+            <div id="login-block">
+                <h2>Вхід в акаунт</h2>
+                <form onsubmit="return validateLogin()">
+                    <div class="row">
+                        Email:
+                        <input type="text" id="email" placeholder="example@gmail.com">
+                    </div>
+                    <div class="row">
+                        Пароль:
+                        <input type="password" id="password" placeholder="Введіть пароль">
+                    </div>
+                    <div class="row">
+                        <input type="submit" value="Увійти" class="btn" style="width:100%;">
+                    </div>
+                </form>
+                <div class="auth-switch">
+                    Ще не зареєстровані?
+                    <a href="#" onclick="document.getElementById('login-block').style.display='none'; document.getElementById('register-block').style.display='block'; return false;">Зареєструватися</a>
+                </div>
+            </div>
+
+            <!-- Форма реєстрації покупця -->
+            <div id="register-block" style="display: none;">
+                <h2>Реєстрація покупця</h2>
+                <form onsubmit="return validateRegister()">
+                    <div class="row">
+                        Прізвище та ім'я:
+                        <input type="text" id="reg_name" placeholder="Лозовська Роксана">
+                    </div>
+                    <div class="row">
+                        Email:
+                        <input type="text" id="reg_email" placeholder="example@gmail.com">
+                    </div>
+                    <div class="row">
+                        Номер телефону:
+                        <input type="text" id="reg_phone" placeholder="+380501234567">
+                    </div>
+                    <div class="row">
+                        Пароль:
+                        <input type="password" id="reg_password1" placeholder="Придумайте пароль">
+                    </div>
+                    <div class="row">
+                        Підтвердіть пароль:
+                        <input type="password" id="reg_password2" placeholder="Повторіть пароль">
+                    </div>
+                    <div class="row">
+                        <input type="submit" value="Зареєструватися" class="btn btn-amber" style="width:100%;">
+                    </div>
+                </form>
+                <div class="auth-switch">
+                    Вже зареєстровані?
+                    <a href="#" onclick="document.getElementById('register-block').style.display='none'; document.getElementById('login-block').style.display='block'; return false;">Увійти</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="footer">
+        &copy; 2026 ElectroMarket. Лозовська Роксана
+    </div>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>

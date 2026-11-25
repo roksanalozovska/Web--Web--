@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Адміністрування — ElectroMarket</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="main">
+
+    <div class="header compact-header">
+        <img src="img/header-banner.jpg" alt="Електрообладнання" class="header-img">
+        <h1>Адміністрування каталогу</h1>
+    </div>
+
+    <nav id="nav">
+        <ul class="nav-links">
+            <li><a href="index.html">Головна</a></li>
+            <li><a href="catalog.html">Каталог товарів</a></li>
+            <li><a href="about.html">Про нас</a></li>
+            <li><a href="admin.html">Адмін-панель</a></li>
+        </ul>
+        <div class="nav-auth"><a href="auth.html">Вхід / Реєстрація</a></div>
+    </nav>
+
+    <div class="content">
+        <!-- Вікно входу саме для адміністратора -->
+        <div id="admin-login-box" class="auth-single-card">
+            <h2>Вхід адміністратора</h2>
+            <p style="font-size: 13px; color: #475569; margin-bottom: 16px; text-align: center;">
+                Для керування базою товарів увійдіть під обліковим записом адміністратора.
+            </p>
+            <form onsubmit="return validateAdminLogin()">
+                <div class="row">
+                    Email адміністратора:
+                    <input type="text" id="admin-login-email" placeholder="admin@electro.ua">
+                </div>
+                <div class="row">
+                    Пароль:
+                    <input type="password" id="admin-login-password" placeholder="admin123">
+                </div>
+                <div class="row">
+                    <input type="submit" value="Увійти в адмін-панель" class="btn" style="width:100%;">
+                </div>
+            </form>
+        </div>
+
+        <!-- Сама адмін-панель (відкривається після входу адміна) -->
+        <div id="admin-panel-content" class="admin-grid" style="display: none;">
+            <!-- Форма додавання / редагування -->
+            <div class="admin-form-box">
+                <h2 id="admin-form-title" style="margin-bottom:15px; border-bottom:2px solid #f59e0b; padding-bottom:8px;">Додати товар</h2>
+                <form id="admin-product-form" onsubmit="return saveAdminProduct()">
+                    <input type="hidden" id="admin-id">
+
+                    <div class="row">
+                        Назва товару:
+                        <input type="text" id="admin-name" placeholder="Автоматичний вимикач">
+                    </div>
+
+                    <div class="row">
+                        Категорія:
+                        <select id="admin-category">
+                            <option value="Автоматика та щити">Автоматика та щити</option>
+                            <option value="Електрофурнітура">Електрофурнітура</option>
+                            <option value="Кабелі та освітлення">Кабелі та освітлення</option>
+                            <option value="Силове обладнання">Силове обладнання</option>
+                        </select>
+                    </div>
+
+                    <div class="row">
+                        Виробник:
+                        <input type="text" id="admin-manufacturer" placeholder="E.NEXT">
+                    </div>
+
+                    <div class="row">
+                        Ціна (грн):
+                        <input type="number" id="admin-price" placeholder="240">
+                    </div>
+
+                    <div class="row">
+                        Кількість на складі (шт.):
+                        <input type="number" id="admin-amount" placeholder="5">
+                    </div>
+
+                    <div class="row">
+                        Файл зображення:
+                        <input type="text" id="admin-image" placeholder="img/breaker.jpg">
+                    </div>
+
+                    <div class="row">
+                        Характеристики:
+                        <input type="text" id="admin-specs" placeholder="230 В, 16 А">
+                    </div>
+
+                    <div class="row">
+                        Опис товару:
+                        <textarea id="admin-desc" rows="2" placeholder="Короткий опис"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn" style="width:100%; margin-bottom:8px;">Зберегти</button>
+                    <button type="button" class="btn btn-amber" style="width:100%;" onclick="resetAdminForm()">Очистити</button>
+                </form>
+            </div>
+
+            <!-- Таблиця товарів -->
+            <div class="admin-table-box">
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
+                    <h2>Список товарів бази даних</h2>
+                    <button class="btn btn-danger" style="font-size:12px; padding:6px 12px;" onclick="resetDefaultDatabase()">Відновити початкові дані</button>
+                </div>
+
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Фото</th>
+                            <th>Назва</th>
+                            <th>Категорія</th>
+                            <th>Виробник</th>
+                            <th>Ціна</th>
+                            <th>Залишок</th>
+                            <th>Дії</th>
+                        </tr>
+                    </thead>
+                    <tbody id="admin-products-body"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        &copy; 2026 ElectroMarket. Лозовська Роксана
+    </div>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>

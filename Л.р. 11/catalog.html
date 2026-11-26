@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог товарів — ElectroMarket</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="main">
+
+    <div class="header compact-header">
+        <img src="img/header-banner.jpg" alt="Електрообладнання" class="header-img">
+        <h1>Каталог товарів</h1>
+    </div>
+
+    <nav id="nav">
+        <ul class="nav-links">
+            <li><a href="index.html">Головна</a></li>
+            <li><a href="catalog.html" class="active">Каталог товарів</a></li>
+            <li><a href="about.html">Про нас</a></li>
+            <li><a href="admin.html">Адмін-панель</a></li>
+        </ul>
+        <div class="nav-auth"><a href="auth.html">Вхід / Реєстрація</a></div>
+    </nav>
+
+    <div class="content">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+            <span id="catalog-stats" style="font-size:14px; font-weight:bold; color:#475569;">Знайдено товарів: 0</span>
+            <button type="button" id="toggle-filters-btn" class="btn btn-amber" style="padding:6px 14px; font-size:13px;">Згорнути / розгорнути фільтри</button>
+        </div>
+
+        <!-- Пошук та фільтрація -->
+        <div class="filter-bar" id="filter-panel">
+            <div class="filter-group">
+                Пошук за назвою товару:
+                <input type="text" id="search-input" placeholder="Введіть назву товару...">
+            </div>
+            <div class="filter-group">
+                Фільтр за категорією:
+                <select id="filter-category">
+                    <option value="all">Усі категорії</option>
+                    <option value="Автоматика та щити">Автоматика та щити</option>
+                    <option value="Електрофурнітура">Електрофурнітура</option>
+                    <option value="Кабелі та освітлення">Кабелі та освітлення</option>
+                    <option value="Силове обладнання">Силове обладнання</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                Фільтр за виробником:
+                <select id="filter-manufacturer">
+                    <option value="all">Усі виробники</option>
+                </select>
+            </div>
+            <div>
+                <button type="button" id="reset-filters-btn" class="btn" style="padding:8px 14px;">Скинути</button>
+            </div>
+        </div>
+
+        <div class="store-layout">
+            <div class="catalog-area">
+                <h2 class="section-title">Товари на складі</h2>
+                <div id="catalog-container" class="catalog-grid"></div>
+            </div>
+
+            <div class="basket-section">
+                <div class="basket-header">
+                    <h3>Ваш кошик</h3>
+                    <span class="basket-count-pill">Товарів: <span id="basket-count">0</span></span>
+                </div>
+                <div id="basket-list">
+                    <p style="color:#64748b; text-align:center; padding:15px 0;">Кошик порожній.</p>
+                </div>
+                <div class="basket-total">
+                    <span>Разом:</span>
+                    <span id="basket-total-sum">0 грн</span>
+                </div>
+                <button type="button" id="checkout-btn" class="btn" style="width:100%; margin-top:15px;">Оформити замовлення</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        &copy; 2026 ElectroMarket. Лозовська Роксана
+    </div>
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

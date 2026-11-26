@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ElectroMarket — каталог електрообладнання</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="main">
+    <div class="header">
+        <img src="img/header-banner.jpg" alt="Електрообладнання" class="header-img">
+        <h1>ElectroMarket</h1>
+    </div>
+
+    <nav id="nav">
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Головна</a></li>
+            <li><a href="catalog.html">Каталог товарів</a></li>
+            <li><a href="about.html">Про нас</a></li>
+            <li><a href="admin.html">Адмін-панель</a></li>
+        </ul>
+        <div class="nav-auth"><a href="auth.html">Вхід / Реєстрація</a></div>
+    </nav>
+
+    <!-- Слайдер -->
+    <div class="slider">
+        <div class="item">
+            <img src="img/slide1.jpg" alt="Модульна автоматика">
+            <div class="slideText">Модульна автоматика та щитове обладнання</div>
+        </div>
+        <div class="item">
+            <img src="img/slide2.jpg" alt="Кабельно-провідникова продукція">
+            <div class="slideText">Кабельно-провідникова продукція</div>
+        </div>
+        <div class="item">
+            <img src="img/slide3.jpg" alt="Розетки та LED-освітлення">
+            <div class="slideText">Розетки, вимикачі та LED-освітлення</div>
+        </div>
+        <div class="item">
+            <img src="img/slide4.jpg" alt="Генератори та стабілізатори">
+            <div class="slideText">Генератори та стабілізатори напруги</div>
+        </div>
+        <a class="prev">&#10094;</a>
+        <a class="next">&#10095;</a>
+        <div class="slider-dots">
+            <span class="slider-dots_item" data-slide="1"></span>
+            <span class="slider-dots_item" data-slide="2"></span>
+            <span class="slider-dots_item" data-slide="3"></span>
+            <span class="slider-dots_item" data-slide="4"></span>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="info-box">
+            <h2>Ласкаво просимо до ElectroMarket!</h2>
+            <p>ElectroMarket — онлайн-каталог електротехнічної продукції, у якому представлено обладнання для побутового та професійного використання.</p>
+            <p>В асортименті представлено продукцію виробників: <strong>E.NEXT, АСКО-УКРЕМ, Schneider Electric, ZUBR, ЗЗЦМ</strong>.</p>
+            <div class="access-notice">
+                <strong>Доступ до каталогу:</strong> перегляд повного переліку товарів, пошук, фільтрування та робота з кошиком доступні лише зареєстрованим користувачам.
+                <br><br>
+                <a href="auth.html" class="btn">Увійти або зареєструватися</a>
+                <a href="catalog.html" class="btn btn-amber button-gap">Перейти до каталогу</a>
+            </div>
+        </div>
+
+        <h2 class="section-title">Основні категорії продукції <small style="font-size:13px; color:#64748b; font-weight:normal;">(натисніть на картку для детального опису)</small></h2>
+        <div class="features-grid">
+            <div class="feature-card" data-category="Автоматика та щити">
+                <h3>Автоматика та щити</h3>
+                <p>Автоматичні вимикачі, ПЗВ, реле напруги та розподільні щитки.</p>
+                <div class="card-extra-info" style="display:none; margin-top:10px; font-size:13px; color:#1b263b;">
+                    Захист однофазних та трифазних мереж від перевантажень і стрибків напруги.
+                </div>
+            </div>
+            <div class="feature-card" data-category="Електрофурнітура">
+                <h3>Електрофурнітура</h3>
+                <p>Розетки із заземленням, вимикачі та монтажні аксесуари.</p>
+                <div class="card-extra-info" style="display:none; margin-top:10px; font-size:13px; color:#1b263b;">
+                    Сучасні серії для прихованого та накладного монтажу в житлових приміщеннях.
+                </div>
+            </div>
+            <div class="feature-card" data-category="Кабелі та освітлення">
+                <h3>Кабелі та освітлення</h3>
+                <p>Мідні проводи, подовжувачі та енергоощадні LED-лампи.</p>
+                <div class="card-extra-info" style="display:none; margin-top:10px; font-size:13px; color:#1b263b;">
+                    Сертифікована кабельна продукція ЗЗЦМ та економне світлодіодне освітлення.
+                </div>
+            </div>
+            <div class="feature-card" data-category="Силове обладнання">
+                <h3>Силове обладнання</h3>
+                <p>Генератори, стабілізатори напруги та мультиметри.</p>
+                <div class="card-extra-info" style="display:none; margin-top:10px; font-size:13px; color:#1b263b;">
+                    Резервне живлення та стабілізація напруги для будинку й майстерні.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">&copy; 2026 ElectroMarket. Лозовська Роксана</div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

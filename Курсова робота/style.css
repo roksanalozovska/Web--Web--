@@ -83,6 +83,7 @@ html, body {
     text-decoration: none;
     border-radius: 4px;
     font-size: 14px;
+    transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 .nav-links li a:hover {
@@ -104,11 +105,16 @@ html, body {
     text-decoration: none;
     font-size: 14px;
     font-weight: bold;
+    transition: background-color 0.25s ease, color 0.25s ease, transform 0.15s ease;
 }
 
 .nav-auth a:hover {
     background-color: #ffffff;
     color: #1b263b;
+}
+
+.nav-auth a:active {
+    transform: scale(0.97);
 }
 
 /* Слайдер */
@@ -121,6 +127,12 @@ html, body {
 
 .slider .item {
     display: none;
+    animation: fadeSlide 0.45s ease;
+}
+
+@keyframes fadeSlide {
+    from { opacity: 0.4; }
+    to { opacity: 1; }
 }
 
 .slider .item img {
@@ -140,6 +152,7 @@ html, body {
     font-weight: bold;
     font-size: 20px;
     background-color: rgba(27, 38, 59, 0.75);
+    transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 .slider .next {
@@ -179,10 +192,15 @@ html, body {
     margin: 0 4px;
     background-color: rgba(255, 255, 255, 0.5);
     display: inline-block;
+    transition: background-color 0.25s ease, transform 0.2s ease;
 }
 
 .slider-dots_item.active, .slider-dots_item:hover {
     background-color: #f59e0b;
+}
+
+.slider-dots_item:hover {
+    transform: scaleY(1.4);
 }
 
 /* Вміст та заголовки */
@@ -212,11 +230,17 @@ html, body {
     text-decoration: none;
     cursor: pointer;
     text-align: center;
+    transition: background-color 0.25s ease, color 0.25s ease, transform 0.15s ease, box-shadow 0.25s ease;
 }
 
 .btn:hover:not(:disabled) {
     background-color: #f59e0b;
     color: #1b263b;
+    box-shadow: 0 4px 10px rgba(27, 38, 59, 0.15);
+}
+
+.btn:active:not(:disabled) {
+    transform: translateY(1px);
 }
 
 .btn:disabled {
@@ -263,6 +287,13 @@ input[type="text"], input[type="password"], input[type="number"], select, textar
     border-radius: 4px;
     font-family: Arial;
     font-size: 14px;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+input[type="text"]:focus, input[type="password"]:focus, input[type="number"]:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #f59e0b;
+    box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.2);
 }
 
 /* Головна сторінка та сторінка про нас */
@@ -298,12 +329,22 @@ input[type="text"], input[type="password"], input[type="number"], select, textar
 }
 
 .feature-card {
+    display: block;
     background-color: #ffffff;
     border: 1px solid #cbd5e1;
     border-top: 4px solid #f59e0b;
     border-radius: 6px;
     padding: 18px;
     text-align: center;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(27, 38, 59, 0.12);
+    border-color: #f59e0b;
 }
 
 .feature-card h3 {
@@ -411,6 +452,13 @@ input[type="text"], input[type="password"], input[type="number"], select, textar
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    border-color: #f59e0b;
+    box-shadow: 0 10px 20px rgba(27, 38, 59, 0.12);
 }
 
 .badge {
@@ -429,6 +477,11 @@ input[type="text"], input[type="password"], input[type="number"], select, textar
     height: 150px;
     object-fit: contain;
     margin: 8px 0;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover img {
+    transform: scale(1.04);
 }
 
 .product-card h3 {
@@ -596,6 +649,14 @@ input[type="text"], input[type="password"], input[type="number"], select, textar
 .admin-table td {
     padding: 10px;
     border-bottom: 1px solid #cbd5e1;
+}
+
+.admin-table tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+.admin-table tbody tr:hover {
+    background-color: #fef9c3;
 }
 
 .admin-table img {

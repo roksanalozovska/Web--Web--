@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог товарів</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>Каталог товарів</h1>
+            <p id="current-view">Усі товари</p>
+        </div>
+    </header>
+
+    <main class="container layout">
+        <aside class="sidebar">
+            <div class="categories-box">
+                <h2>Категорії</h2>
+                <ul id="categories-list" class="categories-list"></ul>
+            </div>
+
+            <button id="see-all-btn" class="see-all-btn active" type="button">
+                See all products
+            </button>
+        </aside>
+
+        <section class="content">
+            <div id="status-message" class="status-message">Завантаження...</div>
+            <div id="products-grid" class="products-grid"></div>
+        </section>
+    </main>
+
+    <!-- Вікно з деталями товару -->
+    <div id="product-details" class="details hidden">
+        <div class="details-box">
+            <button id="close-details" class="close-btn" type="button">&times;</button>
+            <div id="details-body"></div>
+        </div>
+    </div>
+</body>
+</html>
